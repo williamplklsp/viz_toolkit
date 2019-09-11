@@ -1,0 +1,1 @@
+conda env update -f %~dp0\..\environment.yml

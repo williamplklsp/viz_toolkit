@@ -1,0 +1,20 @@
+name: viz_env
+dependencies:
+  - python=3.6.4
+  - numpy==1.16.2
+  - pandas==0.24.2
+  - matplotlib==3.0.3
+  - bokeh==1.0.4
+  - holoviews=1.11.3
+  - scikit-learn==0.20.3
+  - jupyter==1.0.0
+  - pylint==2.3.1
+  - autopep8==1.4.3
+  - xlrd==1.2.0
+  - openpyxl==2.6.2
+  - flask==1.1.1
+  - gevent==1.4.0
+  - pip
+  - pip:
+      - pandas-bokeh==0.2
+      - termcolor==1.1.0

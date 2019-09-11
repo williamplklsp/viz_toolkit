@@ -1,0 +1,39 @@
+<html>
+
+<body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <div id="sankey_multiple" style="width: 900px; height: 400px;"></div>
+
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["sankey"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'From');
+            data.addColumn('string', 'To');
+            data.addColumn('number', '{% if label %}{{ label }}{% else %}Count{% endif %}');
+            data.addRows({{ data | safe }});
+
+        // Set chart options
+        var options = {
+            forceIFrame: true,
+            width: 900,
+            sankey: {
+                link: {
+                    colorMode: 'target'
+                },
+                node: {
+                    interactivity: true
+                }
+            }
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+        chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>
